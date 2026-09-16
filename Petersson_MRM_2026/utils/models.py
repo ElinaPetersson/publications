@@ -578,7 +578,11 @@ def check_regime(regime: str) -> None:
     if regime not in [SIVIM_REGIME, DIFFUSIVE_REGIME, BALLISTIC_REGIME, INTERMEDIATE_REGIME,SBALLISTIC_REGIME]:
         raise ValueError(f'Invalid regime "{regime}". Valid regimes are "{SIVIM_REGIME}", "{DIFFUSIVE_REGIME}", "{BALLISTIC_REGIME}" and "{INTERMEDIATE_REGIME}".')
 
-
+'''
+Test of the jacobian calculation for the sIVIM model. 
+The Jacobian is calculated using finite differences and compared to the analytical Jacobian. 
+The test is performed for a range of parameters and b-values. The test passes if the two Jacobians are close within a specified tolerance.
+'''
 # from OPT_44_models_T2 import sIVIM,sIVIM_jacobian
 # import numpy as np
 # import matplotlib.pyplot as plt
@@ -622,6 +626,6 @@ def check_regime(regime: str) -> None:
 #     Jmy = sIVIM_jacobian(b,D,f,S0,None,TE,T2d,T2p)
 #     np.testing.assert_allclose(Japp, Jmy, rtol, atol_jac)
 
-# '''
-# Får inget error, så jag tror att det funkar ok!
-# '''
+'''
+No error so the jacobian calculation is correct.
+'''
